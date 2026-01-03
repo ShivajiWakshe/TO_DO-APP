@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> To-Do App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="todo-app">
+  <h2>🕒 Smart To-Do</h2>
+
+  <!-- Task Inputs -->
+  <input id="taskInput" placeholder="Task name">
+  <input id="timeInput" type="datetime-local">
+
+  <!-- Buttons -->
+  <button id="addBtn" onclick="addTask()">➕ Add Task</button>
+  <div id="msg"></div>
+
+  <div class="filters">
+    <button onclick="setFilter('all')">All</button>
+    <button onclick="setFilter('pending')">Pending</button>
+    <button onclick="setFilter('completed')">Completed</button>
+    <button onclick="completeAllPending()">✔ Complete All Pending</button>
+  </div>
+
+  <!-- Task List -->
+  <ul id="taskList" class="task-list"></ul>
+</div>
+
+<!-- Reminder Sound -->
+<audio id="alertSound">
+  <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>

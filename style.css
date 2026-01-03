@@ -1,0 +1,151 @@
+/* ===== Reset & Base ===== */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f9fafb;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ===== Todo App Container ===== */
+.todo-app {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(99,102,241,0.4);
+}
+
+/* ===== Header ===== */
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* ===== Inputs ===== */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #c7d2fe;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(99,102,241,0.6);
+}
+
+/* ===== Buttons ===== */
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: #6366f1;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 5px;
+  box-shadow: 0 0 15px rgba(99,102,241,0.6);
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Filters ===== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.filters button {
+  flex: 1;
+  font-size: 0.85rem;
+  padding: 6px;
+  background: #e0e7ff;
+  color: #1e3a8a;
+}
+
+.filters button:hover {
+  background: #6366f1;
+  color: white;
+}
+
+/* ===== Task List ===== */
+ul.task-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  box-shadow: 0 0 12px rgba(99,102,241,0.35);
+  cursor: grab;
+}
+
+li.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+li.near-deadline .remaining {
+  color: red;
+  font-weight: bold;
+  animation: flash 1s infinite;
+}
+
+/* ===== Flash animation for near-deadline tasks ===== */
+@keyframes flash {
+  0%,50%,100% { color: red; }
+  25%,75% { color: yellow; }
+}
+
+/* ===== Remaining time ===== */
+.remaining {
+  font-size: 0.8rem;
+  color: #16a34a;
+  margin-top: 5px;
+}
+
+/* ===== Task Complete Button ===== */
+.task-btn {
+  margin-top: 6px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+/* ===== Success Message ===== */
+#msg {
+  text-align: center;
+  margin: 5px 0;
+  color: green;
+  font-weight: bold;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 450px) {
+  .todo-app { padding: 15px; }
+  button, input { font-size: 0.9rem; }
+}
